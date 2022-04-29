@@ -12,6 +12,13 @@ module.exports=merge(client_basic_config,{
     path:path.resolve(process.cwd(),"./build/popup_page/"),
     filename:"index.js"
   },
+  resolve:{
+    extensions:[".ts",".tsx",".js",".jsx"],
+    alias:{
+      "@@":process.cwd(),
+      "@":path.resolve(process.cwd(),"./src/popup_page/")
+    }
+  },
   plugins:[
     new webpack.DefinePlugin(JSON.stringify({
       "process.env.NODE_ENV":"development"

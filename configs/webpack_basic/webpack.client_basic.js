@@ -1,3 +1,4 @@
+const MiniCssExtractPlugin=require("mini-css-extract-plugin");
 
 const babel_loader_config=require("../webpack_rules/babel_loader_config");
 const css_loader_config=require("../webpack_rules/css_loader_config");
@@ -21,5 +22,11 @@ module.exports={
       ...file_loader_config,
       ...html_loader_config
     ]
-  }
+  },
+  plugins:[
+    new MiniCssExtractPlugin({
+      linkType:"text/css",
+      filename:"[name].css"
+    }),
+  ]
 };

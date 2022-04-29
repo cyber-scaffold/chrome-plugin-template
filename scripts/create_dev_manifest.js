@@ -18,7 +18,7 @@ module.exports=async function create_dev_manifest(){
     permissions:[],
     options_page:"./options_page/index.html",
     background:{
-      service_worker:"./background.js"
+      service_worker:"./background/index.js"
     }
   };
   await writeFile(manifest_file_path,manifest_content,{spaces:2,EOL:"\r\n"});
