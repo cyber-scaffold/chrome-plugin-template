@@ -1,10 +1,25 @@
 const path=require("path");
-const {writeFile}=require("json-file");
+const {readFile,writeFile}=require("jsonfile");
 
-const popup_page_path=path.resolve(process.cwd(),"./build/popup_page/index.html");
-const options_page_path=path.resolve(process.cwd(),"./build/options_page/index.html");
 const manifest_file_path=path.resolve(process.cwd(),"./build/manifest.json");
+const package_json_path=path.resolve(process.cwd(),"./package.json");
 
-(async ()=>{
 
-})();
+module.exports=async function create_dev_manifest(){
+  const {version}=await readFile(package_json_path);
+  const manifest_content={
+    version,
+    name:"起步示例",
+    manifest_version:3,
+    action:{
+      "default_title":"起步示例",
+      "default_popup":"./popup_page/index.html"
+    },
+    permissions:[],
+    options_page:"./options_page/index.html",
+    background:{
+      service_worker:"./background.js"
+    }
+  };
+  await writeFile(manifest_file_path,manifest_content,{spaces:2,EOL:"\r\n"});
+};

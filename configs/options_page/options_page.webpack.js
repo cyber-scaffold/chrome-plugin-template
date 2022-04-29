@@ -5,7 +5,7 @@ const HtmlWebpackPlugin=require("html-webpack-plugin");
 const client_basic_config=require("../webpack_basic/webpack.client_basic");
 
 module.exports=merge(client_basic_config,{
-  mode:"development",
+  mode:"production",
   entry:path.resolve(process.cwd(),"./src/options_page/index.js"),
   output:{
     path:path.resolve(process.cwd(),"./build/options_page/"),

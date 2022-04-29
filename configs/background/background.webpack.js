@@ -1,11 +1,14 @@
 const path=require("path");
+const NodePolyfillPlugin=require("node-polyfill-webpack-plugin");
 
 module.exports={
-  mode:"development",
+  mode:"production",
   entry:path.resolve(process.cwd(),"./src/background.js"),
   output:{
     path:path.resolve(process.cwd(),"./build/"),
     filename:"background.js"
   },
-  target:"node-webkit",
+  plugins: [
+		new NodePolyfillPlugin()
+	]
 };
