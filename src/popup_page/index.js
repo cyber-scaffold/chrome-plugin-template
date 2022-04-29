@@ -9,3 +9,13 @@ ReactDOM.render((
     <div>asdadas</div>
   </div>
 ),render_target);
+
+
+if(process.env.NODE_ENV==="development"){
+  if(module.hot){
+    module.hot.accept();
+    module.hot.dispose(function () {
+      console.log("module.hot.dispose");
+    });
+  }
+}
