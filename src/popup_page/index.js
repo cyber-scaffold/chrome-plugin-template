@@ -1,3 +1,11 @@
+import React from "react";
+import ReactDOM from "react-dom";
 
-console.log("this is popup_page");
-console.log("asdasdsa");
+const render_target=document.getElementById("root");
+
+ReactDOM.render((
+  <div>
+    <div>asdadas</div>
+    <div>asdadas</div>
+  </div>
+),render_target);
