@@ -9,7 +9,7 @@ module.exports=merge(client_basic_config,{
   entry:path.resolve(process.cwd(),"./src/popup_page/index.js"),
   output:{
     path:path.resolve(process.cwd(),"./build/popup_page/"),
-    filename:"[name].js"
+    filename:"index.js"
   },
   plugins:[
     new HtmlWebpackPlugin({
