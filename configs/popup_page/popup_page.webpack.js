@@ -26,7 +26,7 @@ module.exports=merge(client_basic_config,{
     new HtmlWebpackPlugin({
       title:"popup_page",
       filename:path.resolve(process.cwd(),"./build/popup_page/index.html"),
-      template:path.resolve(process.cwd(),"./src/popup_page/index.html")
+      template:path.resolve(process.cwd(),"./public/popup_page.html")
     })
   ]
 });

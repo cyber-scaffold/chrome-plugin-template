@@ -26,7 +26,7 @@ module.exports=merge(client_basic_config,{
     new HtmlWebpackPlugin({
       title:"options_page",
       filename:path.resolve(process.cwd(),"./build/options_page/index.html"),
-      template:path.resolve(process.cwd(),"./src/options_page/index.html")
+      template:path.resolve(process.cwd(),"./public/options_page.html")
     })
   ]
 });
